@@ -9,7 +9,7 @@ Here's how to deploy it on CentOS systems:
 1. Install FirewallD
 
 ```
-sudo yum install firewalld
+sudo yum install -y  firewalld
 sudo service firewalld start
 sudo systemctl enable firewalld
 ```
@@ -42,6 +42,8 @@ sudo firewall-cmd --permanent --zone=public --add-port=3306/tcp
 Test:
 sudo firewall-cmd --list-all
 sudo firewall-cmd --reload
+sudo firewall-cmd --list-all
+
 ```
 
 3. Configure Database
@@ -97,8 +99,8 @@ sudo vi /etc/httpd/conf/httpd.conf         # DONT CHANGE NOW
 ```
 sudo service httpd start
 sudo systemctl enable httpd
-
 sudo systemctl status  httpd
+
 curl http://localhost
 view on port 80 --browser
 ```
@@ -133,7 +135,7 @@ curl http://localhost
 
 ##############
 7.)
-create //var/www/html/index.html--->   This is test
+create /var/www/html/index.html--->   This is test
 Reload page.We can see  "This is test"
 By default:  webserver consider index.html. 
 
